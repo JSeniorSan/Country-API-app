@@ -1,0 +1,48 @@
+%base {
+  border: 1px solid black;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.189);
+  border-radius: 10px;
+  padding: 0.75rem;
+
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.container {
+  @apply bg-black;
+  display: grid;
+  height: auto;
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-areas:
+    "a a a a"
+    "b b b c"
+    "d d d d";
+  gap: 8px;
+
+  .a {
+    @extend %base;
+    grid-area: a;
+    background-color: green;
+    @apply h-64;
+  }
+
+  .b {
+    @extend %base;
+    grid-area: b;
+    background-color: white;
+    @apply h-96;
+  }
+
+  .c {
+    @extend %base;
+    grid-area: c;
+    background-color: blue;
+  }
+
+  .d {
+    @extend %base;
+    grid-area: d;
+    background-color: purple;
+    @apply h-40;
+  }
+}

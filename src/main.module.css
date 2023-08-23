@@ -1,5 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.container .d, .container .c, .container .b, .container .a {
+  border: 1px solid black;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.189);
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 
-/*# sourceMappingURL=main.module.css.map */
+.container {
+  @apply bg-black;
+  display: grid;
+  height: auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "a a a a" "b b b c" "d d d d";
+  gap: 8px;
+}
+.container .a {
+  grid-area: a;
+  background-color: green;
+  @apply h-64;
+}
+.container .b {
+  grid-area: b;
+  background-color: white;
+  @apply h-96;
+}
+.container .c {
+  grid-area: c;
+  background-color: blue;
+}
+.container .d {
+  grid-area: d;
+  background-color: purple;
+  @apply h-40;
+}
+
+.head {
+  @apply text-8xl;
+}
+
+.bodyEl {
+  @apply min-h-screen;
+}/*# sourceMappingURL=main.module.css.map */
